@@ -13,8 +13,9 @@ body {
 h1 {
     font-size: 5rem;
     color: deeppink;
-    border-bottom: 2px solid EA0080;
-    border-right: 2px solid EA0080;
+    border-bottom: 2px solid rgb(234, 0, 128);
+    border-right: 2px solid rgb(234, 0, 128);
+    width: 600px;
 }
 
 p {
@@ -30,6 +31,6 @@ p {
     padding: 20px;
 }
 
-.content {
+/*.content {
     max-width: 300px;
-}
+}*/
