@@ -3,3 +3,19 @@ body {
     overflow: hidden;
   }
   
+.threejs {
+    width: 500px;   /* Ширина канваса */
+    height: 500px;  /* Высота канваса */
+    background: #111;
+    display: block;
+}
+
+.page {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.content {
+    max-width: 300px;
+}
