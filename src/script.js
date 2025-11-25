@@ -17,7 +17,7 @@ scene.add(cubeMesh);
 // initialize the camera
 const camera = new THREE.PerspectiveCamera(
   35,
-  window.innerWidth / window.innerHeight,
+  canvas.clientWidth / canvas.clientHeight,
   0.1,
   200
 );
@@ -29,7 +29,7 @@ const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
   antialias: true,
 });
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(canvas.clientWidth, canvas.clientHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 // instantiate the controls
@@ -38,9 +38,9 @@ controls.enableDamping = true;
 // controls.autoRotate = true;
 
 window.addEventListener("resize", () => {
-  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.aspect = canvas.clientWidth / canvas.clientHeight;
   camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(canvas.clientWidth, canvas.clientHeight);
 });
 
 //initialize the clock
