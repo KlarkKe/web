@@ -11,18 +11,21 @@ body {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 5rem;
     color: deeppink;
+    border-bottom: 2px solid EA0080;
+    border-right: 2px solid EA0080;
 }
 
 p {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 
 .page {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     gap: 20px;
     padding: 20px;
 }
