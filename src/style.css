@@ -4,7 +4,7 @@ body {
   }
   
 .threejs {
-    width: 500px;   /* Ширина канваса */
+    width: 100%;   /* Ширина канваса */
     height: 500px;  /* Высота канваса */
     background: #111;
     display: block;
