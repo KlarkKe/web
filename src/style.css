@@ -1,6 +1,7 @@
 body {
     margin: 0;
     overflow: hidden;
+    background-color: black;
   }
   
 .threejs {
@@ -20,6 +21,7 @@ h1 {
 
 p {
     font-size: 3rem;
+    color: antiquewhite;
 }
 
 
