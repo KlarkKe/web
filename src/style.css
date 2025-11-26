@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     background-color: black;
   }
   
@@ -9,6 +9,11 @@ body {
     height: 500px;
     background: #111;
     display: block;
+}
+
+a {
+    text-decoration: none;
+    color: antiquewhite;
 }
 
 h1 {
@@ -33,6 +38,27 @@ p {
     padding: 20px;
 }
 
+.wrapper {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-around;
+    gap: 20px;
+
+}
+
 /*.content {
     max-width: 300px;
 }*/
+
+img {
+    width: 400px;
+    height: 400px;
+    border-radius: 10%;
+}
+
+@media (max-width: 900px) {
+    .wrapper {
+        flex-direction: column;
+        /* align-items: stretch; */
+    }
+}
