@@ -1,5 +1,8 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import {Pane} from 'tweakpane';
+
+const pane = new Pane();
 
 // canvas сначала!
 const canvas = document.querySelector(".threejs");
@@ -21,11 +24,18 @@ const scene = new THREE.Scene();
 // geometry.setAttribute('position', bufferAttribute)
 
 // objects
-const geometry = new THREE.SphereGeometry(1,16,16);
+const geometry = new THREE.PlaneGeometry(1,1,4,4);
 const cubeMaterial = new THREE.MeshBasicMaterial({ color: "red", wireframe: true });
 
-const cubeMesh = new THREE.Mesh(geometry, cubeMaterial);
-scene.add(cubeMesh);
+const geometryMesh = new THREE.Mesh(geometry, cubeMaterial);
+scene.add(geometryMesh);
+
+pane.addBinding(geometryMesh.scale, 'x', {
+  min: 0,
+  max: 10,
+  step: 0.1
+})
+
 
 const axel = new THREE.AxesHelper(2);
 scene.add(axel);
@@ -69,7 +79,7 @@ const renderloop = () => {
   const delta = currentTime - previosTime;
   previosTime = currentTime;
 
-  cubeMesh.scale.x = Math.sin(currentTime * 10) * 0.5 + 1;
+  // geometryMesh.scale.x = Math.sin(currentTime * 10) * 0.5 + 1;
 
   controls.update();
   renderer.render(scene, camera);
