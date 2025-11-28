@@ -67,7 +67,7 @@ img {
     width: 200px;
     height: 226px;
     border-radius: 10%;
-    transition: all 1s;
+    transition: all 0.3s;
 }
 
 img:hover {
