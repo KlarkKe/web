@@ -7,10 +7,24 @@ const canvas = document.querySelector(".threejs");
 // initialize the scene
 const scene = new THREE.Scene();
 
+//create a custom geometry
+// const vertices = new Float32Array (
+//   [
+//     0, 0, 0, //xyz
+//     0, 2, 0,
+//     2, 0, 0
+//   ]
+// )
+
+// const bufferAttribute = new THREE.BufferAttribute(vertices, 3);
+// const geometry = new THREE.BufferGeometry();
+// geometry.setAttribute('position', bufferAttribute)
+
 // objects
-const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
+const geometry = new THREE.SphereGeometry(5,9,7);
 const cubeMaterial = new THREE.MeshBasicMaterial({ color: "red", wireframe: true });
-const cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial);
+
+const cubeMesh = new THREE.Mesh(geometry, cubeMaterial);
 scene.add(cubeMesh);
 
 const axel = new THREE.AxesHelper(2);
@@ -23,7 +37,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   200
 );
-camera.position.z = 5;
+camera.position.z = 20;
 
 // renderer
 const renderer = new THREE.WebGLRenderer({
@@ -36,6 +50,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 // controls
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
+controls.autoRotate = true;
 
 // resize
 window.addEventListener("resize", () => {
