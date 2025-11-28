@@ -24,10 +24,13 @@ const scene = new THREE.Scene();
 // geometry.setAttribute('position', bufferAttribute)
 
 // objects
-const geometry = new THREE.PlaneGeometry(1,1,4,4);
-const cubeMaterial = new THREE.MeshBasicMaterial({ color: "red", wireframe: true });
+const geometry = new THREE.SphereGeometry(1,16,16);
+const mat1 = new THREE.MeshBasicMaterial({ color: "deeppink", wireframe: true });
+//const mat2 = new THREE.MeshBasicMaterial({ color: "deeppink"});
 
-const geometryMesh = new THREE.Mesh(geometry, cubeMaterial);
+const geometryMesh = new THREE.Mesh(geometry, mat1);
+//const geometryMesh2 = new THREE.Mesh(geometry, mat2);
+
 scene.add(geometryMesh);
 
 pane.addBinding(geometryMesh.scale, 'x', {
