@@ -21,7 +21,7 @@ const scene = new THREE.Scene();
 // geometry.setAttribute('position', bufferAttribute)
 
 // objects
-const geometry = new THREE.SphereGeometry(5,9,7);
+const geometry = new THREE.SphereGeometry(1,16,16);
 const cubeMaterial = new THREE.MeshBasicMaterial({ color: "red", wireframe: true });
 
 const cubeMesh = new THREE.Mesh(geometry, cubeMaterial);
@@ -37,7 +37,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   200
 );
-camera.position.z = 20;
+camera.position.z = 5;
 
 // renderer
 const renderer = new THREE.WebGLRenderer({
