@@ -33,15 +33,31 @@ const sphereParameters = {
   heightSegments: 16
 }
 
-pane
+const paneFolder = pane.addFolder({
+  title: "UI Edit"
+})
+
+paneFolder
   .addBinding(sphereParameters, 'radius', {
   min: 1,
   max: 20,
   step: 0.1,
   label: 'Radius'
 })
-.on('change', (ev)=>{
-  geometry = new THREE.SphereGeometry(ev.value, sphereParameters.widthSegments, sphereParameters.heightSegments);
+.on('change', ()=>{
+  geometry = new THREE.SphereGeometry(sphereParameters.radius, sphereParameters.widthSegments, sphereParameters.heightSegments);
+  geometryMesh.geometry = geometry;
+})
+
+paneFolder
+  .addBinding(sphereParameters, 'widthSegments', {
+  min: 1,
+  max: 60,
+  step: 0.1,
+  label: 'widthSegments'
+})
+.on('change', ()=>{
+  geometry = new THREE.SphereGeometry(sphereParameters.radius, sphereParameters.widthSegments, sphereParameters.heightSegments);
   geometryMesh.geometry = geometry;
 })
 
