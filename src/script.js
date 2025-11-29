@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import Background from "three/src/renderers/common/Background.js";
 //import { label } from "three/tsl";
 import {Pane} from 'tweakpane';
 
@@ -26,6 +27,7 @@ const scene = new THREE.Scene();
 
 // objects
 let geometry = new THREE.SphereGeometry(1,16,16);
+const geometry2 = new THREE.PlaneGeometry(1,1);
 
 const sphereParameters = {
   radius: 1,
@@ -63,13 +65,30 @@ paneFolder
 
 
 
-const mat1 = new THREE.MeshBasicMaterial({ color: "deeppink", wireframe: true });
+const mat1 = new THREE.MeshBasicMaterial();
+mat1.color = new THREE.Color('deeppink')
+// mat1.transparent = true;
+// mat1.opacity = 0.1;
+mat1.side = THREE.DoubleSide;
+
+const fog = new THREE.Fog(0xffffff, 1, 10);
+scene.fog = fog;
+scene.background = new THREE.Color('white')
 //const mat2 = new THREE.MeshBasicMaterial({ color: "deeppink"});
 
 const geometryMesh = new THREE.Mesh(geometry, mat1);
+
+const geometryMesh2 = new THREE.Mesh(geometry, mat1);
+geometryMesh2.position.x = 1.5;
+
+const geometryMesh3 = new THREE.Mesh(geometry2, mat1);
+geometryMesh3.position.x = -1.5;
+
 //const geometryMesh2 = new THREE.Mesh(geometry, mat2);
 
 scene.add(geometryMesh);
+scene.add(geometryMesh2);
+scene.add(geometryMesh3);
 
 // pane.addBinding(geometryMesh.scale, 'x', {
 //   min: 0,
