@@ -26,7 +26,7 @@ const scene = new THREE.Scene();
 // geometry.setAttribute('position', bufferAttribute)
 
 // objects
-let geometry = new THREE.SphereGeometry(1,16,16);
+let geometry = new THREE.BoxGeometry(1,1,1);
 const geometry2 = new THREE.PlaneGeometry(1,1);
 
 const sphereParameters = {
@@ -71,9 +71,9 @@ mat1.color = new THREE.Color('deeppink')
 // mat1.opacity = 0.1;
 mat1.side = THREE.DoubleSide;
 
-const fog = new THREE.Fog(0xffffff, 1, 10);
+const fog = new THREE.Fog(0x000000, 1, 10);
 scene.fog = fog;
-scene.background = new THREE.Color('white')
+scene.background = new THREE.Color('black')
 //const mat2 = new THREE.MeshBasicMaterial({ color: "deeppink"});
 
 const geometryMesh = new THREE.Mesh(geometry, mat1);
@@ -114,7 +114,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   200
 );
-camera.position.z = 5;
+camera.position.z = 7;
 
 // renderer
 const renderer = new THREE.WebGLRenderer({
