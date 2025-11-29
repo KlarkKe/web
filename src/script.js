@@ -28,6 +28,7 @@ const scene = new THREE.Scene();
 // objects
 let geometry = new THREE.BoxGeometry(1,1,1);
 const geometry2 = new THREE.PlaneGeometry(1,1);
+const torusKnotGeometry = new THREE.TorusKnotGeometry(0.5,0.15,100,16)
 
 const sphereParameters = {
   radius: 1,
@@ -63,12 +64,21 @@ paneFolder
   geometryMesh.geometry = geometry;
 })
 
+const mat1 = new THREE.MeshStandardMaterial();
+mat1.color = new THREE.Color('green')
+pane.addBinding(mat1, 'metalness', {
+  min: 0,
+  max: 1,
+  step: 0.01,
+  label: 'metalness'
+})
+pane.addBinding(mat1, 'roughness', {
+  min: 0,
+  max: 1,
+  step: 0.01,
+  label: 'roughness'
+})
 
-
-const mat1 = new THREE.MeshLambertMaterial();
-// mat1.color = new THREE.Color('deeppink')
-// // mat1.transparent = true;
-// // mat1.opacity = 0.1;
 mat1.side = THREE.DoubleSide;
 
 // const fog = new THREE.Fog(0x000000, 1, 10);
@@ -78,7 +88,7 @@ mat1.side = THREE.DoubleSide;
 
 const geometryMesh = new THREE.Mesh(geometry, mat1);
 
-const geometryMesh2 = new THREE.Mesh(geometry, mat1);
+const geometryMesh2 = new THREE.Mesh(torusKnotGeometry, mat1);
 geometryMesh2.position.x = 1.5;
 
 const geometryMesh3 = new THREE.Mesh(geometry2, mat1);
@@ -90,36 +100,37 @@ scene.add(geometryMesh);
 scene.add(geometryMesh2);
 scene.add(geometryMesh3);
 
-const light = new THREE.AmbientLight('white', 2)
-pane.addBinding(light, 'intensity', {
-  min: 0,
-  max: 1,
-  step: 0.01,
-  label: 'Ambient'
-})
-pane.addBinding(light, 'color', {
-  min: 0,
-  max: 100,
-  step: 0.1,
-  label: 'ambientColor'
-})
+//Ambient Light
+const light = new THREE.AmbientLight('0xffffff', 0.6)
+// pane.addBinding(light, 'intensity', {
+//   min: 0,
+//   max: 1,
+//   step: 0.01,
+//   label: 'Ambient'
+// })
+// pane.addBinding(light, 'color', {
+//   min: 0,
+//   max: 100,
+//   step: 0.1,
+//   label: 'ambientColor'
+// })
 scene.add(light)
 
-
-const pointLight = new THREE.PointLight('deeppink', 2)
-pane.addBinding(pointLight, 'intensity', {
-  min: 0,
-  max: 100,
-  step: 0.1,
-  label: 'pointLight'
-})
-pane.addBinding(pointLight, 'color', {
-  min: 0,
-  max: 100,
-  step: 0.1,
-  label: 'pointColor'
-})
-pointLight.position.set(2,2,2)
+//Point Light
+const pointLight = new THREE.PointLight('0xffffff', 0.9)
+// pane.addBinding(pointLight, 'intensity', {
+//   min: 0,
+//   max: 100,
+//   step: 0.1,
+//   label: 'pointLight'
+// })
+// pane.addBinding(pointLight, 'color', {
+//   min: 0,
+//   max: 100,
+//   step: 0.1,
+//   label: 'pointColor'
+// })
+pointLight.position.set(1,1,1)
 scene.add(pointLight)
 
 const axel = new THREE.AxesHelper(2);
@@ -132,7 +143,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   200
 );
-camera.position.z = 7;
+camera.position.z = 5;
 
 // renderer
 const renderer = new THREE.WebGLRenderer({
