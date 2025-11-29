@@ -90,26 +90,37 @@ scene.add(geometryMesh);
 scene.add(geometryMesh2);
 scene.add(geometryMesh3);
 
-const light = new THREE.AmbientLight('black', 0.5)
+const light = new THREE.AmbientLight('white', 2)
+pane.addBinding(light, 'intensity', {
+  min: 0,
+  max: 1,
+  step: 0.01,
+  label: 'Ambient'
+})
+pane.addBinding(light, 'color', {
+  min: 0,
+  max: 100,
+  step: 0.1,
+  label: 'ambientColor'
+})
 scene.add(light)
 
-const pointLight = new THREE.PointLight('deeppink', 1)
+
+const pointLight = new THREE.PointLight('deeppink', 2)
+pane.addBinding(pointLight, 'intensity', {
+  min: 0,
+  max: 100,
+  step: 0.1,
+  label: 'pointLight'
+})
+pane.addBinding(pointLight, 'color', {
+  min: 0,
+  max: 100,
+  step: 0.1,
+  label: 'pointColor'
+})
 pointLight.position.set(2,2,2)
 scene.add(pointLight)
-
-// pane.addBinding(geometryMesh.scale, 'x', {
-//   min: 0,
-//   max: 10,
-//   step: 0.1,
-//   label: 'Scale X'
-// })
-
-// pane.addBinding(geometryMesh.scale, 'y', {
-//   min: 0,
-//   max: 10,
-//   step: 0.1,
-//   label: 'Scale Y'
-// })
 
 const axel = new THREE.AxesHelper(2);
 scene.add(axel);
