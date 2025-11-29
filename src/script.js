@@ -65,15 +65,15 @@ paneFolder
 
 
 
-const mat1 = new THREE.MeshBasicMaterial();
-mat1.color = new THREE.Color('deeppink')
-// mat1.transparent = true;
-// mat1.opacity = 0.1;
+const mat1 = new THREE.MeshLambertMaterial();
+// mat1.color = new THREE.Color('deeppink')
+// // mat1.transparent = true;
+// // mat1.opacity = 0.1;
 mat1.side = THREE.DoubleSide;
 
-const fog = new THREE.Fog(0x000000, 1, 10);
-scene.fog = fog;
-scene.background = new THREE.Color('black')
+// const fog = new THREE.Fog(0x000000, 1, 10);
+// scene.fog = fog;
+// scene.background = new THREE.Color('black')
 //const mat2 = new THREE.MeshBasicMaterial({ color: "deeppink"});
 
 const geometryMesh = new THREE.Mesh(geometry, mat1);
@@ -89,6 +89,13 @@ geometryMesh3.position.x = -1.5;
 scene.add(geometryMesh);
 scene.add(geometryMesh2);
 scene.add(geometryMesh3);
+
+const light = new THREE.AmbientLight('black', 0.5)
+scene.add(light)
+
+const pointLight = new THREE.PointLight('deeppink', 1)
+pointLight.position.set(2,2,2)
+scene.add(pointLight)
 
 // pane.addBinding(geometryMesh.scale, 'x', {
 //   min: 0,
