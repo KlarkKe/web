@@ -30,7 +30,7 @@ const torusKnotGeometry = new THREE.TorusKnotGeometry(0.5,0.15,100,16);
 const sphereGeometry = new THREE.SphereGeometry(0.5,32,32);
 const cylinderGeometry = new THREE.CylinderGeometry(0.5,0.5,1,32);
 
-const textureTest = textureLoader.load('static/textures/whispy-grass-meadow-bl/wispy-grass-meadow_albedo.png')
+const textureTest = textureLoader.load('/textures/whispy-grass-meadow-bl/wispy-grass-meadow_albedo.png')
 
 const material_1 = new THREE.MeshBasicMaterial();
 material_1.map = textureTest;
