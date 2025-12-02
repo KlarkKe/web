@@ -49,12 +49,19 @@ body {
         font-size: 0.5em;
         padding: 0;
     }
-
-    .zone {
-        transition: none;
-    }
-
 }
+
+@media only screen and (max-width: 600px) {
+    .zone,
+    .zone:hover,
+    .box,
+    .box:hover {
+        transition: none !important;
+        transform: none !important;
+        box-shadow: none !important;
+    }
+}
+
 
 .push {
     margin-left: auto;
