@@ -1,8 +1,13 @@
 .container {
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: 1fr;
     gap: 20px;
-    grid-template-columns: 1fr 1fr 2fr;
 }
+
+/* .green {
+    grid-column: span 2;
+} */
 
 .zone {
     cursor:pointer;
