@@ -51,18 +51,6 @@ body {
     }
 }
 
-@media only screen and (max-width: 600px) {
-    .zone,
-    .zone:hover,
-    .box,
-    .box:hover {
-        transition: none !important;
-        transform: none !important;
-        box-shadow: none !important;
-    }
-}
-
-
 .push {
     margin-left: auto;
 }
@@ -160,4 +148,21 @@ footer {
     background: -o-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* IE10+ */
     background: linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* W3C */
+}
+
+@media (max-width: 600px) {
+
+    .zone,
+    .zone:hover,
+    .box,
+    .box:hover {
+        transition-property: none !important;
+        transition-duration: 0s !important;
+        transition-timing-function: linear !important;
+        transition-delay: 0s !important;
+
+        /* Убираем эффекты, чтобы ничего не "дергалось" */
+        transform: none !important;
+        box-shadow: none !important;
+    }
 }
