@@ -38,7 +38,6 @@ material_1.map = textureTest;
 material_1.side = THREE.DoubleSide;
 const groupMesh = new THREE.Group();
 
-
 //GEOMETRY PARAMS CHANGE
 // const sphereParameters = {
 //   radius: 1,
