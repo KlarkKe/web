@@ -1,7 +1,8 @@
 var button = document.getElementById("enter");
+var deleteBtns = document.getElementsByClassName("clear");
+
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
-var li = document.querySelector("li");
 
 
 function inputLength() {
@@ -10,14 +11,13 @@ function inputLength() {
 
 function createListElement (){
     var li = document.createElement("li");
-    li.appendChild(document.createTextNode(input.value));
-    ul.appendChild(li);
-    input.value = "";
-}
-
-function createDeleteButton(){
     var btn = document.createElement("button");
-    
+    li.appendChild(document.createTextNode(input.value));
+    btn.appendChild(document.createTextNode("Delete"));
+    btn.classList.add("clear");
+    ul.appendChild(li);
+    li.appendChild(btn).addEventListener("click", addClearItem);
+    input.value = "";
 }
 
 function addListAfterClick(){
@@ -36,11 +36,15 @@ function addDoneAfterClick(task) {
     
 	if (task.target.tagName === "LI"){
 		task.target.classList.toggle("done");
-
-        var btn = document.createElement("button");
-        btn.appendChild(document.createTextNode("Delete"))
-        task.target.appendChild(btn)
 	}
+}
+
+function addClearItem(task){
+    task.target.parentElement.remove()
+}
+
+for (const item of deleteBtns) {
+    item.addEventListener("click", addClearItem);
 }
 
 button.addEventListener("click", addListAfterClick)
