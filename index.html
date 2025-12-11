@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tam.dev</title>
+  <script type="module" crossorigin src="./assets/index-CWk8q_o5.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DN66lJqa.css">
+</head>
+<body>
+    <div class="page">
+        <h1>TAMNENDS.<a href="https://github.com/KlarkKe">dev</a></h1>
+        
+        <canvas class="threejs"></canvas>
+    <div class="content">
+        <p>Я придумал эту страницу как песочницу — место, где по чуть-чуть будет расти мой будущий сайт-портфолио. Здесь я собираю свой прогресс в Three.js и вебе вообще. 3дшку можно вращать, да!</p>
+        <p>//Сегодня флексим с помощью <a href="https://flexboxfroggy.com/#ru"><span class="highlight">flexbox</span></a>.</p>
+        <p>//28 ноября. И в обзоре Bootstrap. Кстати, прикрепил игру выше по флексам. Зацените!</p>
+        <p>//В <span class="highlight">three.js</span>, как можете заметить, играю с геометрией, а по планам изучить материал и текстуры на сегодня. Ох, что же будет...) Заглядывай в течение дня или вечерком!</p>
+        <p>//30 ноября. Текстуры/Свет/Тени и наконец приступим к первому проекту</p>
+        <p>//1 декабря. Bootstrap и CSS grid. Темы перед забегом по js. Этот блок я прям жду сильнее всего</p>
+        <p>//<a class="highlight" href="/bootstrapPage.html">Ссылка</a> на Bootstrap страницу, а тут будет layout на основе <a class="highlight" href="/gridPage.html">Grid</a></p>
+        <p>//<a class="highlight" href="/flexGridPage.html">flexbox + grid</a> фух...</p>
+        <p>//8 декабря. Углубляюсь в <a class="highlight" href="/testJs.html">js/DOM</a>. В three js эту неделю все еще разбираю геометрию, текстуры, материалы и текст и после перейду к интересной теме света.</p>
+        <br>
+        <p>random news<hr></p>
+    </div>
+    <div class="wrapper">
+        <div class="block">
+            <img src="./assets/coffee-Drt6deT-.jpg" alt="coffee">
+            <p class="dscrpt">Кофейня в Изумрудном</p>
+        </div>
+        <div class="block">
+            <img src="./assets/fayb-D_SGbmkv.jpg" alt="fog">
+            <p class="dscrpt">Были на лекции у Файба!</p>
+        </div>
+        <div class="block">
+            <img src="./assets/sketch-Cn4IgbMT.jpg" alt="sketch">
+            <p class="dscrpt">Скетчил как-то в парке</p>
+        </div>
+        <div class="block">
+            <img src="./assets/roses-B2aaucoT.jpg" alt="roses">
+            <p class="dscrpt">Хороший фильм. мне понравился, а вам?</p>
+        </div>
+        <div class="block">
+            <img src="./assets/keyboard-kJAAm93j.jpg" alt="keyboard">
+            <p class="dscrpt">Клац клац клац</p>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js + DOM</title>
+    <link rel="stylesheet" type="text/css" href="./testJsStyle.css">
+</head>
+<body>
+    <h1>Shopping List</h1>
+    <p id="first">Get it down today</p>
+    <input id="userinput" type="text" placeholder="enter items">
+    <button id="enter">Enter</button>
+    <ul>
+        <li>Notebook
+            <button class="clear">Delete</button>
+        </li>
+        <li>Jello
+            <button class="clear">Delete</button>
+        </li>
+        <li>Spinach
+            <button class="clear">Delete</button>
+        </li>
+        <li>Rice
+            <button class="clear">Delete</button>
+        </li>
+        <li>Cake
+            <button class="clear">Delete</button>
+        </li>
+        <li>Candle
+            <button class="clear">Delete</button>
+        </li>
+    </ul>
+    <script type="text/javascript" src="./testJsScript.js"></script>
+</body>
+</html> -->
+
+<!-- var button = document.getElementById("enter");
+var deleteBtns = document.getElementsByClassName("clear");
+
+var input = document.getElementById("userinput");
+var ul = document.querySelector("ul");
+
+
+function inputLength() {
+    return input.value.length; 
+}
+
+function createListElement (){
+    var li = document.createElement("li");
+    var btn = document.createElement("button");
+    li.appendChild(document.createTextNode(input.value));
+    btn.appendChild(document.createTextNode("Delete"));
+    btn.classList.add("clear");
+    ul.appendChild(li);
+    li.appendChild(btn).addEventListener("click", addClearItem);
+    input.value = "";
+}
+
+function addListAfterClick(){
+    if(inputLength() != 0) {
+        createListElement();
+    }
+}
+
+function addListAfterKeypress(event){
+    if(inputLength() != 0 && event.key === "Enter") {
+        createListElement();
+    }    
+}
+
+function addDoneAfterClick(task) {
+    
+    if (task.target.tagName === "LI"){
+        task.target.classList.toggle("done");
+    }
+}
+
+function addClearItem(task){
+    task.target.parentElement.remove()
+}
+
+for (const item of deleteBtns) {
+    item.addEventListener("click", addClearItem);
+}
+
+button.addEventListener("click", addListAfterClick)
+input.addEventListener("keydown", addListAfterKeypress)
+ul.addEventListener("click", addDoneAfterClick) -->
+
+<!-- .done {
+  text-decoration: line-through;
+}
+
+span{
+    cursor: pointer;
+} -->
+
+
+
+----------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" >  
+    <title>Grid Master</title>
+    <link rel="stylesheet" type="text/css" href="./gridPageStyle.css">
+</head>
+<body>
+    <div class="container">
+        <div class="zone green">🦊</div>
+        <div class="zone red">🐰</div>
+        <div class="zone blue">🐸</div>
+        <div class="zone yellow">🦁</div>
+        <div class="zone purple">🐯</div>
+        <div class="zone brown">🐭</div>
+        <div class="zone green">🦄</div>
+        <div class="zone red">🐲</div>
+        <div class="zone blue">🐷</div>
+        <div class="zone yellow">🐺</div>
+        <div class="zone purple">🐼</div>
+        <div class="zone brown">🐻</div>
+    </div>
+</body>
+</html>
+
+<!-- .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: 1fr;
+    gap: 20px;
+}
+
+/* .green {
+    grid-column: span 2;
+} */
+
+.zone {
+    cursor:pointer;
+    /* display:inline-block; */
+    text-align: center;
+    font-size:10em;
+    border-radius:4px;
+    border:1px solid #bbb;
+    transition: all 0.3s linear;
+}
+
+.zone:hover {
+    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
+
+
+/*https://paulund.co.uk/how-to-create-shiny-css-buttons*/
+/***********************************************************************
+ *  Green Background
+ **********************************************************************/
+.green{
+    background: #56B870; /* Old browsers */
+    background: -moz-linear-gradient(top, #56B870 0%, #a5c956 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#56B870), color-stop(100%,#a5c956)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #56B870 0%,#a5c956 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #56B870 0%,#a5c956 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #56B870 0%,#a5c956 100%); /* IE10+ */
+    background: linear-gradient(top, #56B870 0%,#a5c956 100%); /* W3C */
+}
+
+/***********************************************************************
+ *  Red Background
+ **********************************************************************/
+.red{
+    background: #C655BE; /* Old browsers */
+    background: -moz-linear-gradient(top, #C655BE 0%, #cf0404 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#C655BE), color-stop(100%,#cf0404)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #C655BE 0%,#cf0404 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #C655BE 0%,#cf0404 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #C655BE 0%,#cf0404 100%); /* IE10+ */
+    background: linear-gradient(top, #C655BE 0%,#cf0404 100%); /* W3C */
+}
+
+/***********************************************************************
+ *  Yellow Background
+ **********************************************************************/
+.yellow{
+    background: #F3AAAA; /* Old browsers */
+    background: -moz-linear-gradient(top, #F3AAAA 0%, #febf04 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F3AAAA), color-stop(100%,#febf04)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #F3AAAA 0%,#febf04 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #F3AAAA 0%,#febf04 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #F3AAAA 0%,#febf04 100%); /* IE10+ */
+    background: linear-gradient(top, #F3AAAA 0%,#febf04 100%); /* W3C */
+}
+
+/***********************************************************************
+ *  Blue Background
+ **********************************************************************/
+.blue{
+    background: #7abcff; /* Old browsers */
+    background: -moz-linear-gradient(top, #7abcff 0%, #60abf8 44%, #4096ee 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7abcff), color-stop(44%,#60abf8), color-stop(100%,#4096ee)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* IE10+ */
+    background: linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* W3C */
+}
+
+/***********************************************************************
+ *  Purple Background
+ **********************************************************************/
+.purple {
+    background: #A88BEB; /* Old browsers */
+    background: -moz-linear-gradient(top, #A88BEB 0%, #F1A7F1 44%, #F8CEEC 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#A88BEB), color-stop(44%,#F1A7F1), color-stop(100%,#F8CEEC)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #A88BEB 0%,#F1A7F1 44%,#F8CEEC 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #A88BEB 0%,#F1A7F1 44%,#F8CEEC 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #A88BEB 0%,#F1A7F1 44%,#F8CEEC 100%); /* IE10+ */
+    background: linear-gradient(top, #A88BEB 0%,#F1A7F1 44%,#F8CEEC 100%); /* W3C */
+}
+
+/***********************************************************************
+ *  Brown Background
+ **********************************************************************/
+.brown {
+    background: #f6e6b4; /* Old browsers */
+    background: -moz-linear-gradient(top, #f6e6b4 0%, #ed9017 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6e6b4), color-stop(100%,#ed9017)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #f6e6b4 0%,#ed9017 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #f6e6b4 0%,#ed9017 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #f6e6b4 0%,#ed9017 100%); /* IE10+ */
+    background: linear-gradient(top, #f6e6b4 0%,#ed9017 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6e6b4', endColorstr='#ed9017',GradientType=0 ); /* IE6-9 */
+} -->
