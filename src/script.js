@@ -27,7 +27,7 @@ const scene = new THREE.Scene();
 
 // objects
 let geometry = new THREE.BoxGeometry(1,1,1);
-const geometry2 = new THREE.PlaneGeometry(1,1);
+const geometry2 = new THREE.TorusKnotGeometry(0.5,0.15,100,16);
 const torusKnotGeometry = new THREE.TorusKnotGeometry(0.5,0.15,100,16)
 
 const sphereParameters = {
@@ -39,40 +39,40 @@ const sphereParameters = {
 const paneFolder = pane.addFolder({
   title: "UI Edit"
 })
-
 paneFolder
-  .addBinding(sphereParameters, 'radius', {
-  min: 1,
-  max: 20,
-  step: 0.1,
-  label: 'Radius'
-})
-.on('change', ()=>{
-  geometry = new THREE.SphereGeometry(sphereParameters.radius, sphereParameters.widthSegments, sphereParameters.heightSegments);
-  geometryMesh.geometry = geometry;
-})
+//   .addBinding(sphereParameters, 'radius', {
+//   min: 1,
+//   max: 20,
+//   step: 0.1,
+//   label: 'Radius'
+// })
+// .on('change', ()=>{
+//   geometry = new THREE.SphereGeometry(sphereParameters.radius, sphereParameters.widthSegments, sphereParameters.heightSegments);
+//   geometryMesh.geometry = geometry;
+// })
 
-paneFolder
-  .addBinding(sphereParameters, 'widthSegments', {
-  min: 1,
-  max: 60,
-  step: 0.1,
-  label: 'widthSegments'
-})
-.on('change', ()=>{
-  geometry = new THREE.SphereGeometry(sphereParameters.radius, sphereParameters.widthSegments, sphereParameters.heightSegments);
-  geometryMesh.geometry = geometry;
-})
+// paneFolder
+//   .addBinding(sphereParameters, 'widthSegments', {
+//   min: 1,
+//   max: 60,
+//   step: 0.1,
+//   label: 'widthSegments'
+// })
+// .on('change', ()=>{
+//   geometry = new THREE.SphereGeometry(sphereParameters.radius, sphereParameters.widthSegments, sphereParameters.heightSegments);
+//   geometryMesh.geometry = geometry;
+// })
+// 
 
 const mat1 = new THREE.MeshStandardMaterial();
-mat1.color = new THREE.Color('green')
-pane.addBinding(mat1, 'metalness', {
+mat1.color = new THREE.Color('deeppink')
+paneFolder.addBinding(mat1, 'metalness', {
   min: 0,
   max: 1,
   step: 0.01,
   label: 'metalness'
 })
-pane.addBinding(mat1, 'roughness', {
+paneFolder.addBinding(mat1, 'roughness', {
   min: 0,
   max: 1,
   step: 0.01,
@@ -81,10 +81,10 @@ pane.addBinding(mat1, 'roughness', {
 
 mat1.side = THREE.DoubleSide;
 
-// const fog = new THREE.Fog(0x000000, 1, 10);
-// scene.fog = fog;
-// scene.background = new THREE.Color('black')
-//const mat2 = new THREE.MeshBasicMaterial({ color: "deeppink"});
+const fog = new THREE.Fog(0xffffff, 1, 10);
+scene.fog = fog;
+scene.background = new THREE.Color('white')
+// const mat2 = new THREE.MeshBasicMaterial({ color: "deeppink"});
 
 const geometryMesh = new THREE.Mesh(geometry, mat1);
 
